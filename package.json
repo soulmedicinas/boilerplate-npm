@@ -1,6 +1,7 @@
 {
 	"name": "fcc-learn-npm-package-json",
 	"author": "tira menali",
+	"description": "this project demonstrates my knowldge of how to manage pacakges with NPM",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
