@@ -6,6 +6,11 @@ const port = process.env.PORT || 3000;
 
 console.log("Hello World");
 
+app.use(function middleware(req, res, next) {
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next();
+});
+
 app.get("/", (req, res) => {
   res.json({"message": "HELLO JSON"});
   process.env.MESSAGE_STYLE;
