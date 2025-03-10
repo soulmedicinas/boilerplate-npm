@@ -12,14 +12,61 @@ app.use(function middleware(req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.json({"message": "HELLO JSON"});
-  process.env.MESSAGE_STYLE;
-  process.env.MESSAGE_STYLE=uppercase;
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 app.use("/public", express.static(__dirname + "/public"));
 
+app.get("/json", (req, res) => {
+  let message = "Hello json";
+  if (process.env.MESSAGE_STYLE === "uppercase") {
+    message = message.toUpperCase();
+  }
+  res.json({ message });
+});
+
+app.get('/now', 
+  (req, res, next) => {
+    req.time = new Date().toString();  
+  next();
+}, 
+  (req, res) => {
+    res.json({ 
+      time: req.time 
+    });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ module.exports = app;
+
