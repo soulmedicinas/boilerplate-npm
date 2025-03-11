@@ -46,6 +46,14 @@ app.get('/:word/echo', (req, res) => {
   });
 });
 
+app.get('/name', (req, res) => {
+  //destructure and rename the keys
+  var { first: firstName, last: lastName } = req.query;
+  // Use template literals to form a formatted string
+  res.json({ 
+    name: `${firstName} ${lastName}`
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
