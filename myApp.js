@@ -36,6 +36,17 @@ app.get('/now',
     });
 });
 
+app.get('/:word/echo', (req, res) => {
+  // Access the corresponding key in the req.params
+  // use destructuring to get multiple parameters
+  const { word } = req.params;
+   // Send the req.params object as a JSON Response
+  res.json({
+    echo: word
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
