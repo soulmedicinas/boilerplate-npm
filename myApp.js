@@ -73,6 +73,13 @@ app.post('/name', (req, res) => {
   res.json({ name: `${firstName} ${lastName}` });
 });
 
+// mount POST handler
+app.post("/name", (req, res) => {
+  // Handle the data in the request
+  let string = req.body.first + " " + req.body.last;
+  res.json({ name: string });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
