@@ -1,7 +1,7 @@
 {
 	"name": "fcc-learn-npm-package-json",
 	"author": "tira menali",
-	"description": "this project demonstrates my knowldge of how to manage pacakges with NPM",
+	"description": "this project demonstrates my knowledge of how to manage pacakges with NPM",
 	"keywords": ["freecodecamp", "package", "npm"],
 	"license": "JSON",
 	"version": "1.2.0"
